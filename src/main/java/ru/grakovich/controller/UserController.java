@@ -59,7 +59,7 @@ public class UserController {
 
     @PostMapping("/user/{id}")
     public String deleteUser(@PathVariable("id") Long Id) {
-        userService.deleteFilm(Id);
+        userService.delete(Id);
         return "redirect:/";
     }
 }

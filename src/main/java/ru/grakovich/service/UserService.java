@@ -13,5 +13,5 @@ public interface UserService {
 
     void update(Long id, String name, String lastName, Integer age);
 
-    void deleteFilm(Long id);
+    void delete(Long id);
 }

@@ -19,7 +19,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public List<User> allUser() {
-        return userDAO.findAll();
+        return userDAO.allUser();
     }
 
     @Override
@@ -29,7 +29,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User getUserById(long id) {
-        return userDAO.findById(id).get();
+        return userDAO.getUserById(id);
     }
 
     @Override
@@ -38,11 +38,11 @@ public class UserServiceImpl implements UserService {
         user.setName(name);
         user.setLastName(lastName);
         user.setAge(age);
-        userDAO.save(user);
+        userDAO.update(user);
     }
 
     @Override
-    public void deleteFilm(Long id) {
-        userDAO.delete(getUserById(id));
+    public void delete(Long id) {
+        userDAO.delete(id);
     }
 }

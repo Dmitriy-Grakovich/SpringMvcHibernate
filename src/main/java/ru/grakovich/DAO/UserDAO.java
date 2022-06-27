@@ -1,14 +1,20 @@
 package ru.grakovich.DAO;
 
 
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
-
-
 import ru.grakovich.model.User;
 
+import java.util.List;
 
 
-public interface UserDAO extends JpaRepository<User,Long> , JpaSpecificationExecutor<User>{
+public interface UserDAO{
 
+    List<User> allUser();
+
+    void save(User user);
+
+    User getUserById(long id);
+
+    void delete(Long id);
+
+    void update(User user);
 }
